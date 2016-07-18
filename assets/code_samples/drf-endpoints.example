@@ -1,0 +1,4 @@
+class LevelPackViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, GenericViewSet):
+    permission_classes = (APIKeyPermission,)
+    serializer_class = LevelPackSerializer
+    queryset = LevelPack.objects.all()

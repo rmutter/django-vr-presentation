@@ -1,0 +1,19 @@
+class LevelPack(models.Model):
+    title = models.CharField(max_length=20)
+    ...
+
+class Level(models.Model):
+    title = models.CharField(max_length=20)
+    level_pack = models.ForeignKey(LevelPack, related_name='levels')
+    ...
+
+class HiddenObject(models.Model):
+    level = models.ForeignKey(Level, related_name="hidden_objects")
+    name = models.CharField(max_length=12)
+    scale_x = models.FloatField()
+    scale_y = models.FloatField()
+    scale_z = models.FloatField()
+    position_x = models.FloatField()
+    position_y = models.FloatField()
+    position_z = models.FloatField()
+    ...

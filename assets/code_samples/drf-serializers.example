@@ -1,0 +1,23 @@
+class HiddenObjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HiddenObject
+        fields = ('id', 'name', 'icon_asset_name', 'icon_filled_asset_name', 'scale_x', 'scale_y', 'scale_z',
+                  'position_x', 'position_y', 'position_z')
+
+
+class LevelSerializer(serializers.ModelSerializer):
+    hidden_objects = HiddenObjectSerializer(many=True)
+
+    class Meta:
+        model = Level
+        fields = ('id', 'title', 'identifier', 'description', 'photosphere_asset_name', 'image', 'audio_clip_name',
+                  'hidden_objects')
+
+
+class LevelPackSerializer(serializers.ModelSerializer):
+    levels = LevelSerializer(many=True)
+
+    class Meta:
+        model = LevelPack
+        fields = ('id', 'title', 'identifier', 'description', 'size', 'hidden_objects', 'asset_bundle_name',
+                  'in_app_purchase_identifier', 'image', 'default_unlocked', 'social_share_image', 'levels')
