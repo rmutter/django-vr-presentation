@@ -1,0 +1,8 @@
+// Async load photosphere for this level from this Level Pack's asset bundle
+StartCoroutine(
+    assetBundleUtility.InstantiateMaterialsAsync(
+        levelPack.asset_bundle_name,
+        level.photosphere_asset_name,
+        photosphereMeshRenderer
+    )
+);

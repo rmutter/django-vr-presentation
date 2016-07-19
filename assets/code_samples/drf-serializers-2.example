@@ -1,0 +1,6 @@
+class LevelPackSerializer(serializers.ModelSerializer):
+    levels = LevelSerializer(many=True)
+
+    class Meta:
+        model = LevelPack
+        fields = (...)

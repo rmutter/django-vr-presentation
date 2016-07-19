@@ -1,0 +1,11 @@
+using BestHTTP;
+
+private void getLevelPacks() {
+    URI uri = new Uri(Constants.ServerURL + "/level_packs/?api_key=" + Constants.APIKey);
+    HTTPRequest request = new HTTPRequest(uri, OnRequestFinished);
+    request.Send();
+}
+
+private void OnRequestFinished(HTTPRequest request, HTTPResponse response) {
+    ...
+}

@@ -1,0 +1,12 @@
+class HiddenObjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HiddenObject
+        fields = (...)
+
+
+class LevelSerializer(serializers.ModelSerializer):
+    hidden_objects = HiddenObjectSerializer(many=True)
+
+    class Meta:
+        model = Level
+        fields = (...)

@@ -1,0 +1,19 @@
+using AssetBundles;
+
+public class AssetBundleUtility : MonoBehaviour {
+    public IEnumerator InstantiateMaterialsAsync(string assetBundleName, string assetName, MeshRenderer meshRenderer) {
+        // Load asset from assetBundle
+        AssetBundleLoadAssetOperation request = AssetBundleManager.LoadAssetAsync(
+            assetBundleName,
+            assetName,
+            typeof(Material)
+        );
+        yield return StartCoroutine(request);
+
+        // Set material on our mesh renderer
+        Material material = request.GetAsset<Material>();
+        if (material != null && meshRenderer != null) {
+            meshRenderer.material = material;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+private void OnRequestFinished(HTTPRequest request, HTTPResponse response) {
+    List<LevelPack> levelPacks = StringSerializationAPI.Deserialize(
+        typeof(List<LevelPack>),
+        response.DataAsText
+    ) as List<LevelPack>;
+    setupLevelPacks(levelPacks);
+}
+
+public class LevelPack {
+    public string title { get; set; }
+    public string asset_bundle_name { get; set; }
+    public List<Level> levels { get; set; }
+    ...
+}

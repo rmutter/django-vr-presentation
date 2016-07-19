@@ -2,3 +2,8 @@ class APIKeyPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         api_key = request.GET.get('api_key')
         return api_key == settings.API_KEY
+
+
+# urls.py
+router = DefaultRouter()
+router.register(r'level_packs', LevelPackViewSet, base_name='level_packs')

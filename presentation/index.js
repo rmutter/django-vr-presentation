@@ -37,14 +37,21 @@ const images = {
   appStoreThree: require("../assets/appstore-3.png"),
   appStoreFour: require("../assets/appstore-4.png"),
   appStoreFive: require("../assets/appstore-5.png"),
+  cameraObject: require("../assets/camera-object.png"),
   crossPlatformVr: require("../assets/cross-platform-vr.jpg"),
+  detailScreen: require("../assets/detail-screen.png"),
   djangoPony: require("../assets/django-pony.png"),
   djangoRestFramework: require("../assets/django-rest-framework.gif"),
+  downloadScreen: require("../assets/download-screen.png"),
   googleCardboard: require("../assets/google-cardboard.jpg"),
   levelMakingOne: require("../assets/level-making-1.jpg"),
   levelMakingTwo: require("../assets/level-making-2.jpg"),
   levelMakingThree: require("../assets/level-making-3.jpg"),
   levelMakingFour: require("../assets/level-making-4.jpg"),
+  levelMakingFive: require("../assets/level-making-5.jpg"),
+  levelMakingSix: require("../assets/level-making-6.jpg"),
+  listScreen: require("../assets/list-screen.png"),
+  present: require("../assets/present.gif"),
   reinventWheel: require("../assets/reinvent-wheel.jpg"),
   rudyMagic: require("../assets/rudy-magic.jpg"),
   samsungGear: require("../assets/samsung-gear.jpg"),
@@ -57,6 +64,7 @@ const images = {
   titansOfSpace: require("../assets/titans-of-space.jpg"),
   unityDevelopment: require("../assets/unity-game-development.png"),
   unityEditorVr: require("../assets/unity-editor-vr.png"),
+  unityEditorLevel: require("../assets/unity-editor-level.png"),
   yetiHead: require("../assets/yeti-head-white.png"),
   vrHeadsets: require("../assets/vr-headsets.jpg"),
   vrProfile: require("../assets/vr-profile.jpg"),
@@ -166,6 +174,14 @@ export default class Presentation extends React.Component {
                 <Image src={images.thumbsUp.replace("/", "")} margin="60px 0 0 60px" height="350px"/>
               </Fit>
             </Layout>
+          </Slide>
+          <Slide maxWidth={1250}>
+            <Heading fit caps>
+              There's a Quiz! 📱 or 💻
+            </Heading>
+            <Text textSize="4rem" caps textColor="secondary" margin="30px 0 0 0">
+              With prizes, so pay attention!
+            </Text>
           </Slide>
           <Slide maxWidth={1250}>
             <Heading caps>
@@ -358,13 +374,26 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide maxWidth={1250}>
             <Heading fit caps>
+              Tiny Eye Level Making Cont.
+            </Heading>
+            <Layout>
+              <Fill>
+                <Image src={images.levelMakingFive.replace("/", "")} margin="60px 0 0 0" height="325px"/>
+              </Fill>
+              <Fill>
+                <Image src={images.levelMakingSix.replace("/", "")} margin="60px 0 0 0" height="325px"/>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide maxWidth={1250}>
+            <Heading fit caps>
               Tiny Eye Architecture
             </Heading>
             <Layout>
               <Fill>
                 <List>
                   <ListItem>Python 3.4, Django 1.9</ListItem>
-                  <ListItem>Unity 5.0, C# (not javascript)</ListItem>
+                  <ListItem>Unity 5, C# (not javascript)</ListItem>
                   <ListItem>Cross Platform - iOS + Android</ListItem>
                 </List>
               </Fill>
@@ -426,6 +455,24 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide maxWidth={1250}>
             <Heading fit caps>
+              Camera is the Key
+            </Heading>
+            <Layout>
+              <Fit>
+                <Image src={images.cameraObject.replace("/", "")} margin="60px 20px 0" height="350px"/>
+              </Fit>
+              <Fill>
+                <List padding="20px 0 0">
+                  <ListItem>In VR camera is the player's perspective</ListItem>
+                  <ListItem>Controls each eye to create effect</ListItem>
+                  <ListItem>Cardboard comes with a camera prefab</ListItem>
+                  <ListItem>Put objects in user's view (i.e. cursor)</ListItem>
+                </List>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide maxWidth={1250}>
+            <Heading fit caps>
               Unity VR Cross Platform
             </Heading>
             <Layout>
@@ -441,6 +488,15 @@ export default class Presentation extends React.Component {
                 <Image src={images.crossPlatformVr.replace("/", "")} margin="60px 0 0 20px" height="300px"/>
               </Fit>
             </Layout>
+          </Slide>
+          <Slide maxWidth={1250}>
+            <Heading caps textSize="6rem">
+              Quiz Time! 🔔
+            </Heading>
+            <Text textSize="3rem" textColor="secondary" margin="40px 0 0 0">
+              URL: https://kahoot.it <br/>
+              PIN: ?
+            </Text>
           </Slide>
           <Slide maxWidth={1250}>
             <Heading caps>
@@ -480,32 +536,35 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
-              Why Django Rest Framework?
-            </Heading>
-            <Text caps textSize="4rem" textColor="secondary">
-              Do I Need to Say Anything?
-            </Text>
-          </Slide>
-          <Slide maxWidth={1250}>
             <Heading caps>
               Models
             </Heading>
             <Text textSize="1em" textColor="secondary">
               Level pack has multiple Levels each with many HiddenObjects
             </Text>
-            <CodePane
-              lang="python"
-              source={require("raw!../assets/code_samples/django-models.example")}
-              margin="10px auto"
-            />            
+            <Layout>
+              <Fill>
+                <CodePane
+                  lang="python"
+                  source={require("raw!../assets/code_samples/django-models-1.example")}
+                  margin="10px 10px 0 0"
+                />      
+              </Fill>
+              <Fill>
+                <CodePane
+                  lang="python"
+                  source={require("raw!../assets/code_samples/django-models-2.example")}
+                  margin="10px 0 0 10px"
+                />      
+              </Fill>                
+            </Layout>
           </Slide>
           <Slide maxWidth={1250}>
             <Heading caps>
-              Endpoint
+              DRF Endpoint
             </Heading>
             <Text textSize="1.5em" textColor="secondary" margin="40px 0 0">
-              Simple, Standard DRF Endpoint
+              Standard Django Rest Framework
             </Text>
             <CodePane
               lang="python"
@@ -517,21 +576,32 @@ export default class Presentation extends React.Component {
             <Heading caps>
               Serializers
             </Heading>
-            <Text textSize="1.5em" textColor="secondary" margin="40px 0 0">
+            <Text textSize="1.5em" textColor="secondary">
               Straightforward Serializers
             </Text>
-            <CodePane
-              lang="python"
-              source={require("raw!../assets/code_samples/drf-serializers.example")}
-              margin="20px auto"
-            />
+            <Layout>
+              <Fill>
+                <CodePane
+                  lang="python"
+                  source={require("raw!../assets/code_samples/drf-serializers-1.example")}
+                  margin="20px 10px 0 0"
+                />
+              </Fill>
+              <Fill>
+                <CodePane
+                  lang="python"
+                  source={require("raw!../assets/code_samples/drf-serializers-2.example")}
+                  margin="20px 0 0 10px"
+                />
+              </Fill>
+            </Layout>
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
-              Permission
+            <Heading caps textSize="5rem">
+              Permissions + Router
             </Heading>
             <Text textSize="1.5em" textColor="secondary" margin="40px 0 0">
-              API Key Permission - Security Not High Priority
+              API Key - Security Not High Priority
             </Text>
             <CodePane
               lang="python"
@@ -551,62 +621,119 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide maxWidth={1250}>
             <Heading fit caps>
-              2D List & Detail Scenes
+              2D List Scenes
             </Heading>
             <Layout>
               <Fill>
                 <List>
                   <ListItem>Makes a request to our API</ListItem>
-                  <ListItem>Creates list and populates detail scenes from API data</ListItem>
-                  <ListItem>Compares identifier information from API to device storage</ListItem>
+                  <ListItem>Populates list with level packs</ListItem>
+                  <ListItem>Download, Purchase, or Play</ListItem>
                 </List>
               </Fill>
               <Fit>
-                <Image src={images.thumbsUp.replace("/", "")} margin="60px 0 0 60px" height="350px"/>
+                <Image src={images.listScreen.replace("/", "")} margin="60px 0 0 20px" height="275px"/>
               </Fit>
             </Layout>
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
+            <Heading caps textSize="6rem">
               Best HTTP
             </Heading>
+            <Text textSize="1.5em" textColor="secondary" margin="40px 0 0">
+              Purchased through Asset Store - Utility for REST
+            </Text>
+            <CodePane
+              lang="csharp"
+              source={require("raw!../assets/code_samples/unity-api-request.example")}
+              margin="20px auto"
+            />
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
-              Best HTTP Code Samples
+            <Heading caps textSize="3rem">
+              Full Serializer
             </Heading>
+            <CodePane
+              lang="csharp"
+              source={require("raw!../assets/code_samples/full-serializer.example")}
+              margin="20px auto"
+            />
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
-              Examples for deserializing/serializing
+            <Heading caps textSize="6rem">
+              Full Serializer Cont.
             </Heading>
+            <Text textSize="1em" textColor="secondary" margin="40px 0 0">
+              Available on Github - Automatically serializes/deserializes json into objects
+            </Text>
+            <CodePane
+              lang="csharp"
+              source={require("raw!../assets/code_samples/full-serializer-usage.example")}
+              margin="20px auto"
+            />
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
+            <Heading caps>
               3D/VR Scene
             </Heading>
             <Layout>
               <Fill>
                 <List>
-                  <ListItem>Set our photosphere from an asset bundle</ListItem>
-                  <ListItem>Create and place our hidden objects from API data</ListItem>
-                  <ListItem>Setup other text, images, and icons in the scene</ListItem>
+                  <ListItem>Bootstrap selected scene</ListItem>
+                  <ListItem>Photosphere asset bundle</ListItem>
+                  <ListItem>Hidden objects from data</ListItem>
+                  <ListItem>Text, images, and icons</ListItem>
                 </List>
               </Fill>
               <Fit>
-                <Image src={images.thumbsUp.replace("/", "")} margin="60px 0 0 60px" height="350px"/>
+                <Image src={images.unityEditorLevel.replace("/", "")} margin="60px 0 0 20px" height="300px"/>
               </Fit>
             </Layout>
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
-              Asset Bundles Background
+            <Heading caps>
+              Asset Bundles
             </Heading>
+            <Layout>
+              <Fit>
+                <Image src={images.present.replace("/", "")} margin="60px 20px 0" height="275px"/>
+              </Fit>
+              <Fill>
+                <List padding="20px 0 0">
+                  <ListItem>Game assets are large (360 photos)</ListItem>
+                  <ListItem>Avoid a 100MB+ app</ListItem>
+                  <ListItem>Download assets when needed</ListItem>
+                  <ListItem>Ability to change assets without update</ListItem>
+                  <ListItem>Can contain objects, materials, scenes...</ListItem>
+                </List>
+              </Fill>
+            </Layout>
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>
-              Asset Bundles Code Samples
+            <Heading caps textSize="4rem">
+              Asset Bundles in Code
             </Heading>
+            <Text textSize="1em" textColor="secondary" margin="20px 0 0">
+              Stored on S3 & links sent with API response
+            </Text>
+            <CodePane
+              lang="csharp"
+              source={require("raw!../assets/code_samples/asset-bundle-init.example")}
+              margin="20px auto"
+            />
+          </Slide>
+          <Slide maxWidth={1250}>
+            <Heading caps textSize="4rem">
+              Asset Bundles in Code Cont.
+            </Heading>
+            <Text textSize="1em" textColor="secondary" margin="20px 0 0">
+              Follow Unity Tutorial to get their Asset Bundle Utility class
+            </Text>
+            <CodePane
+              lang="csharp"
+              source={require("raw!../assets/code_samples/asset-bundle-implementation.example")}
+              margin="20px auto"
+            />
           </Slide>
           <Slide maxWidth={1250}>
             <Heading fit caps>Further Resources for Unity Learning - Unity Tutorials, Udemy, Github repos, etc</Heading>

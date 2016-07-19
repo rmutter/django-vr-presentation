@@ -1,0 +1,14 @@
+class LevelPack(models.Model):
+    title = models.CharField(max_length=20)
+    asset_bundle_name = models.CharField(max_length=100)
+    ...
+
+class Level(models.Model):
+    title = models.CharField(max_length=20)
+    level_pack = models.ForeignKey(
+        LevelPack,
+        related_name='levels'
+    )
+    photosphere_asset_name = models.CharField(...)
+    audio_clip_name = models.CharField(...)
+    ...
