@@ -15,6 +15,7 @@ import {
   Link,
   ListItem,
   List,
+  S,
   Slide,
   Spectacle,
   Text
@@ -61,6 +62,7 @@ const images = {
   terminalIcon: require("../assets/terminal-icon.png"),
   thumbsUp: require("../assets/thumbs-up.png"),
   tinyEyeBranding: require("../assets/tiny-eye-branding.jpg"),
+  tinyEyeLogo: require("../assets/tiny-eye-logo.jpg"),
   titansOfSpace: require("../assets/titans-of-space.jpg"),
   unityDevelopment: require("../assets/unity-game-development.png"),
   unityEditorVr: require("../assets/unity-editor-vr.png"),
@@ -151,7 +153,7 @@ export default class Presentation extends React.Component {
                 <List padding="20px 0 0">
                   <ListItem>Unity 101</ListItem>
                   <ListItem>Django + Django Rest Framework 101</ListItem>
-                  <ListItem>Build My First App Tutorial</ListItem>
+                  <ListItem>Step by Step Walkthrough</ListItem>
                   <ListItem>* Resources Provided at the End</ListItem>
                 </List>
               </Fill>
@@ -344,7 +346,9 @@ export default class Presentation extends React.Component {
             <Heading fit caps>
               Tiny Eye Game Play Cont.
             </Heading>
-            <Text color="secondary"><Link href="https://vimeo.com/158431507">Proof of Concept Demo</Link></Text>
+            <Text color="secondary">
+              <Link href="https://vimeo.com/158431507" textColor="white"><S type="underline">Proof of Concept Demo</S></Link>
+            </Text>
           </Slide>
           <Slide maxWidth={1250}>
             <Heading fit caps>
@@ -494,8 +498,7 @@ export default class Presentation extends React.Component {
               Quiz Time! 🔔
             </Heading>
             <Text textSize="3rem" textColor="secondary" margin="40px 0 0 0">
-              URL: https://kahoot.it <br/>
-              PIN: ?
+              https://kahoot.it
             </Text>
           </Slide>
           <Slide maxWidth={1250}>
@@ -736,11 +739,70 @@ export default class Presentation extends React.Component {
             />
           </Slide>
           <Slide maxWidth={1250}>
-            <Heading fit caps>Further Resources for Unity Learning - Unity Tutorials, Udemy, Github repos, etc</Heading>
+            <Heading fit caps>Further Resources for Learning</Heading>
+            <Layout>
+              <Fill>
+                <List>
+                  <ListItem>
+                    <Link href="https://www.udemy.com/vrcourse/" textColor="white">
+                      <S type="underline">Udemy Unity VR Tutorial</S>
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://github.com/omgwtfgames/unity-cardboard-photosphere" textColor="white">
+                      <S type="underline">Photosphere Examples</S>
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://www.assetstore.unity3d.com/en/#!/content/10872" textColor="white">
+                      <S type="underline">Best HTTP</S>
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://github.com/jacobdufault/fullserializer" textColor="white">
+                      <S type="underline">Full Serializer</S>
+                    </Link>
+                  </ListItem>
+                </List>
+              </Fill>
+              <Fill>
+                <List>
+                  <ListItem>
+                    <Link href="https://developers.google.com/vr/unity/get-started-ios" textColor="white">
+                      <S type="underline">Cardboard Example Project</S>
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://theta360.com/en/about/theta/s.html" textColor="white">
+                      <S type="underline">Ricoh Theta S 360 Camera</S>
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://www.raywenderlich.com/116805/make-vr-game-unity-google-cardboard" textColor="white">
+                      <S type="underline">Unity Cardboard Tutorial</S>
+                    </Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://unity3d.com/learn/tutorials/topics/scripting/assetbundles-and-assetbundle-manager" textColor="white">
+                      <S type="underline">Asset Bundle Manager</S>
+                    </Link>
+                  </ListItem>
+                </List>
+              </Fill>
+            </Layout>
           </Slide>
-          <Slide bgDarken={0.5} maxWidth={1250}>
+          <Slide bgImage={images.tinyEyeLogo.replace("/", "")} bgDarken={0.5} maxWidth={1250}>
             <Image src={images.yetiHead.replace("/", "")} margin="0" height="300px"/>
-            <Heading fit caps>Any Questions?</Heading>
+            <Heading caps>Any Questions?</Heading>
+            <Text textSize="1em" textColor="secondary" margin="20px 0 0">
+              djangocon-vr.surge.sh
+            </Text>
+            <Text textSize="1em" textColor="secondary" margin="20px 0 0">
+              @RudyMutter
+            </Text>
+            <Text textSize="1em" textColor="secondary" margin="20px 0 0">
+              yeti.co
+            </Text>
           </Slide>
         </Deck>
       </Spectacle>
